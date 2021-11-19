@@ -8,35 +8,39 @@
 import UIKit
 
 class SettingsController: UIViewController {
-    var model: SettingsModel?
+    let settingsTableView = UITableView()
 
-    private var settingsView: SettingsView? {
-        guard isViewLoaded else { return nil }
-        return view as? SettingsView
-    }
+         override func viewDidLoad() {
+             super.viewDidLoad()
 
-    // MARK: - Lifecycle
+             view.backgroundColor = .red
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+             setupHierarchy()
+             setupLayout()
+         }
 
-        view = SettingsView()
-        model = SettingsModel()
+         override func viewWillAppear(_ animated: Bool) {
+             setupNavigation()
+         }
 
-        configureView()
-    }
+         // MARK: - Settings
 
-     override func viewWillAppear(_ animated: Bool) {
-         (view as? SettingsView)?.setupNavigation(self)
-     }
+         private func setupHierarchy() {
+             view.addSubview(settingsTableView)
+         }
 
-}
+         private func setupLayout() {
+             settingsTableView.translatesAutoresizingMaskIntoConstraints = false
+             settingsTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+             settingsTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+             settingsTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+             settingsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+         }
 
-// MARK: - Configuration
-
-private extension SettingsController {
-    func configureView() {
-        guard let models = model?.createModels() else { return }
-        settingsView?.configureView(with: models)
-    }
+         private func setupNavigation() {
+             navigationItem.title = "Настройки"
+             navigationController?.navigationBar.backgroundColor = .white
+             let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 27, weight: UIFont.Weight.semibold)]
+             navigationController?.navigationBar.titleTextAttributes = attributes
+         }
 }
