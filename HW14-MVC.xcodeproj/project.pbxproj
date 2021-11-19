@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		90DA33F12747735E006CDBAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DA33F02747735E006CDBAF /* AppDelegate.swift */; };
-		90DA33F32747735E006CDBAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DA33F22747735E006CDBAF /* SceneDelegate.swift */; };
-		90DA33F52747735E006CDBAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DA33F42747735E006CDBAF /* ViewController.swift */; };
 		90DA33F82747735E006CDBAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90DA33F62747735E006CDBAF /* Main.storyboard */; };
 		90DA33FA2747735E006CDBAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90DA33F92747735E006CDBAF /* Assets.xcassets */; };
 		90DA33FD2747735E006CDBAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90DA33FB2747735E006CDBAF /* LaunchScreen.storyboard */; };
+		90DA340C27477728006CDBAF /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DA340B27477728006CDBAF /* SettingsModel.swift */; };
+		90DA340E27477752006CDBAF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DA340D27477752006CDBAF /* Settings.swift */; };
+		90DA341027477774006CDBAF /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DA340F27477774006CDBAF /* SettingsTableViewCell.swift */; };
+		90DA341227477799006CDBAF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DA341127477799006CDBAF /* SettingsView.swift */; };
+		90DA3414274777B9006CDBAF /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DA3413274777B9006CDBAF /* SettingsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		90DA33ED2747735E006CDBAF /* HW14-MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW14-MVC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90DA33F02747735E006CDBAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90DA33F22747735E006CDBAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		90DA33F42747735E006CDBAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		90DA33F72747735E006CDBAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90DA33F92747735E006CDBAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90DA33FC2747735E006CDBAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90DA33FE2747735E006CDBAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90DA340B27477728006CDBAF /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		90DA340D27477752006CDBAF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		90DA340F27477774006CDBAF /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		90DA341127477799006CDBAF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		90DA3413274777B9006CDBAF /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,74 @@
 		90DA33EF2747735E006CDBAF /* HW14-MVC */ = {
 			isa = PBXGroup;
 			children = (
-				90DA33F02747735E006CDBAF /* AppDelegate.swift */,
-				90DA33F22747735E006CDBAF /* SceneDelegate.swift */,
-				90DA33F42747735E006CDBAF /* ViewController.swift */,
+				90DA340527477566006CDBAF /* Source */,
+				90DA340427477557006CDBAF /* Resource */,
+			);
+			path = "HW14-MVC";
+			sourceTree = "<group>";
+		};
+		90DA340427477557006CDBAF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
 				90DA33F62747735E006CDBAF /* Main.storyboard */,
 				90DA33F92747735E006CDBAF /* Assets.xcassets */,
 				90DA33FB2747735E006CDBAF /* LaunchScreen.storyboard */,
 				90DA33FE2747735E006CDBAF /* Info.plist */,
 			);
-			path = "HW14-MVC";
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		90DA340527477566006CDBAF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				90DA3407274776A4006CDBAF /* Scenes */,
+				90DA340627477650006CDBAF /* AppDelegate */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		90DA340627477650006CDBAF /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				90DA33F02747735E006CDBAF /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		90DA3407274776A4006CDBAF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				90DA3408274776C3006CDBAF /* Model */,
+				90DA3409274776CC006CDBAF /* View */,
+				90DA340A274776D3006CDBAF /* Controller */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		90DA3408274776C3006CDBAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90DA340B27477728006CDBAF /* SettingsModel.swift */,
+				90DA340D27477752006CDBAF /* Settings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90DA3409274776CC006CDBAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90DA340F27477774006CDBAF /* SettingsTableViewCell.swift */,
+				90DA341127477799006CDBAF /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90DA340A274776D3006CDBAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				90DA3413274777B9006CDBAF /* SettingsController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +203,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90DA33F52747735E006CDBAF /* ViewController.swift in Sources */,
+				90DA3414274777B9006CDBAF /* SettingsController.swift in Sources */,
+				90DA341227477799006CDBAF /* SettingsView.swift in Sources */,
+				90DA340E27477752006CDBAF /* Settings.swift in Sources */,
+				90DA340C27477728006CDBAF /* SettingsModel.swift in Sources */,
+				90DA341027477774006CDBAF /* SettingsTableViewCell.swift in Sources */,
 				90DA33F12747735E006CDBAF /* AppDelegate.swift in Sources */,
-				90DA33F32747735E006CDBAF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +359,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L4GB5QD2W6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HW14-MVC/Info.plist";
+				INFOPLIST_FILE = "HW14-MVC/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -306,7 +374,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,7 +387,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L4GB5QD2W6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HW14-MVC/Info.plist";
+				INFOPLIST_FILE = "HW14-MVC/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -334,7 +402,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
