@@ -8,39 +8,35 @@
 import UIKit
 
 class SettingsController: UIViewController {
-    let settingsTableView = UITableView()
+    var model: SettingsModel?
 
-         override func viewDidLoad() {
-             super.viewDidLoad()
+    private var settingsView: SettingsView? {
+        guard isViewLoaded else { return nil }
+        return view as? SettingsView
+    }
 
-             view.backgroundColor = .red
+    // MARK: - Lifecycle
 
-             setupHierarchy()
-             setupLayout()
-         }
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-         override func viewWillAppear(_ animated: Bool) {
-             setupNavigation()
-         }
+        view = SettingsView()
+        model = SettingsModel()
 
-         // MARK: - Settings
+        configureView()
+    }
 
-         private func setupHierarchy() {
-             view.addSubview(settingsTableView)
-         }
+     override func viewWillAppear(_ animated: Bool) {
+         (view as? SettingsView)?.setupNavigation(self)
+     }
 
-         private func setupLayout() {
-             settingsTableView.translatesAutoresizingMaskIntoConstraints = false
-             settingsTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-             settingsTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-             settingsTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-             settingsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-         }
+}
 
-         private func setupNavigation() {
-             navigationItem.title = "Настройки"
-             navigationController?.navigationBar.backgroundColor = .white
-             let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 27, weight: UIFont.Weight.semibold)]
-             navigationController?.navigationBar.titleTextAttributes = attributes
-         }
+// MARK: - Configuration
+
+private extension SettingsController {
+    func configureView() {
+        guard let models = model?.createModels() else { return }
+        settingsView?.configureView(with: models)
+    }
 }
